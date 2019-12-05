@@ -1,0 +1,96 @@
+
+/*Login*/
+.Button{
+    -fx-background-color: #b00505;
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-background-radius: 16;
+}
+
+.Button:hover{
+    -fx-background-color: white;
+    -fx-text-fill: #b00505;
+    -fx-border-color: #b00505;
+    -fx-border-radius: 30;
+    
+}
+
+.Button:pressed{
+    -fx-background-color: #b00505;
+    -fx-text-fill: white;
+    -fx-border-color: #b00505;
+    -fx-border-radius: 30; 
+}
+
+.Label{
+    -fx-text-fill: #2760e3;   
+}
+
+.Label:hover{
+    -fx-text-fill: #184abc;
+    -fx-underline: true;
+    -fx-font-weight: bold;
+}
+
+/*Interface MP*/
+.PlaylistButton{
+    -fx-background-color: #006064;
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-background-radius: 12; 
+}
+
+.PlaylistButton:hover{
+    -fx-background-color: white;
+    -fx-text-fill: #006064;
+    
+}
+
+.PlaylistButton:pressed{
+    -fx-background-color: #006064;
+    -fx-text-fill: white;
+}
+
+.mediaPannelButton{
+    -fx-background-radius: 7;
+}
+
+/*.mediaPannelButton:pressed{
+    -fx-background-color: white;
+    -fx-background-radius: 7;
+    
+}*/
+
+.mediaPannel{
+    -fx-background-radius: 2px;
+    -fx-background-color: #D9D9D9;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 8, 0, 0, 0);
+}
+
+.list-view{
+    -fx-background-color: #448aff;
+    -fx-border-radius: 1;
+    -fx-border-color: black;
+    -fx-text-fill: red;
+}
+
+.list-cell:even {
+    -fx-control-inner-background: #5c6bc0;
+    -fx-border-radius: 1;
+    -fx-border-color: black;
+    -fx-border-style: dashed;
+    
+}
+
+.list-cell:odd {
+    -fx-control-inner-background: #42a5f5;
+    -fx-border-radius: 1;
+    -fx-border-color: black;
+}
+
+/*Gerenal Use Effects*/
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 5, 5);
+}
+
+

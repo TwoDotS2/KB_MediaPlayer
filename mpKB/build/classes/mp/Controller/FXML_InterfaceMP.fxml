@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="690.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mp.Controller.DC_MP">
+   <bottom>
+      <VBox prefHeight="66.0" prefWidth="690.0" style="-fx-background-color: #F2F2F2;" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="seekSlider" prefHeight="0.0" prefWidth="690.0">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin></Slider>
+            <HBox prefHeight="65.0" prefWidth="690.0" styleClass="mediaPannel" stylesheets="@style.css">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#previousMedia" styleClass="mediaPannelButton" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@../122315-solid-media-elements/fast-forward.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#playVid" styleClass="mediaPannelButton" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../122315-solid-media-elements/play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#pauseVid" styleClass="mediaPannelButton" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../122315-solid-media-elements/pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#nextMedia" styleClass="mediaPannelButton">
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../122315-solid-media-elements/pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../122315-solid-media-elements/fast-forward.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../122315-solid-media-elements/speaker.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="volumeSlider" prefHeight="14.0" prefWidth="50.0" styleClass="volume" stylesheets="@style.css">
+                     <HBox.margin>
+                        <Insets left="15.0" top="13.0" />
+                     </HBox.margin>
+                  </Slider>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <MenuBar prefHeight="17.0" prefWidth="690.0" BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../122315-solid-media-elements/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleButtonAction" text="Open" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Vídeo">
+               <content>
+                  <StackPane prefHeight="324.0" prefWidth="690.0">
+                     <children>
+                        <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin></MediaView>
+                     </children>
+                  </StackPane>
+               </content>
+            </Tab>
+            <Tab text="Playlist">
+               <content>
+                  <HBox prefHeight="332.0" prefWidth="690.0">
+                     <children>
+                        <ListView fx:id="playlistsLV" onMouseClicked="#clickOnPlaylist" prefHeight="324.0" prefWidth="87.0" stylesheets="@style.css" />
+                        <ListView fx:id="musicLV" onMouseClicked="#clickOnMedia" prefHeight="324.0" prefWidth="196.0">
+                           <styleClass>
+                              <String fx:value="list-cell" />
+                              <String fx:value="list-view" />
+                           </styleClass></ListView>
+                        <VBox prefHeight="324.0" prefWidth="114.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="bttAtualiza" mnemonicParsing="false" onAction="#atualizaLista" prefHeight="28.0" prefWidth="99.0" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Refresh.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#choosePlaylist" prefHeight="28.0" prefWidth="99.0" text="Choose">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Folder.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#showCreatePlaylist" prefHeight="28.0" prefWidth="99.0" text="Create">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#showDeletePlaylist" prefHeight="28.0" prefWidth="99.0" text="Delete">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#addMscPlaylist" prefHeight="28.0" prefWidth="99.0" text="Add">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Clave.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#showRemoveMscPlaylist" prefHeight="28.0" prefWidth="99.0" text="Remove">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../122315-solid-media-elements/Remove.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <StackPane prefHeight="324.0" prefWidth="249.0">
+                           <children>
+                              <AnchorPane fx:id="paneCreate" prefHeight="234.0" prefWidth="196.0" visible="false">
+                                 <children>
+                                    <Pane layoutX="33.0" layoutY="10.0" prefHeight="128.0" prefWidth="196.0" style="-fx-background-color: #f44336; -fx-background-radius: 25;" styleClass="shadow" stylesheets="@style.css" />
+                                    <TextField fx:id="playlistName" layoutX="50.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="165.0" />
+                                    <Label fx:id="playlistNameLabel" layoutX="50.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="101.0" text="Playlist's Name:" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="bttCreate" layoutX="50.0" layoutY="89.0" mnemonicParsing="false" onAction="#createPlaylist" opacity="0.9" prefHeight="25.0" prefWidth="164.0" styleClass="PlaylistButton" stylesheets="@style.css" text="Create" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="12.0" radius="5.5" width="12.0" />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="paneDelete" prefHeight="323.0" prefWidth="250.0" visible="false">
+                                 <children>
+                                    <Pane layoutX="33.0" layoutY="10.0" prefHeight="128.0" prefWidth="196.0" style="-fx-background-color: #5c6bc0; -fx-background-radius: 25;" styleClass="shadow" stylesheets="@style.css" />
+                                    <Button fx:id="bttDelete" layoutX="50.0" layoutY="89.0" mnemonicParsing="false" onAction="#deletePlaylist" opacity="0.9" prefHeight="25.0" prefWidth="164.0" styleClass="PlaylistButton" stylesheets="@style.css" text="Delete" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="12.0" radius="5.5" width="12.0" />
+                                       </effect>
+                                    </Button>
+                                    <Label fx:id="playlistNameLabel1" layoutX="50.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="144.0" text="Playlist's Name:" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="playlistName1" layoutX="50.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="165.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="paneRemove" layoutX="10.0" layoutY="10.0" prefHeight="234.0" prefWidth="281.0" stylesheets="@style.css" visible="false">
+                                 <children>
+                                    <Pane layoutX="33.0" layoutY="10.0" prefHeight="128.0" prefWidth="196.0" style="-fx-background-color: #880e4f; -fx-background-radius: 25;" styleClass="shadow" stylesheets="@style.css" />
+                                    <TextField fx:id="musicName" layoutX="50.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="165.0" />
+                                    <Label fx:id="playlistNameLabel21" layoutX="50.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="101.0" text="Music's Name:" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="bttRemove" layoutX="50.0" layoutY="89.0" mnemonicParsing="false" onAction="#removeMscPlaylist" opacity="0.9" prefHeight="25.0" prefWidth="164.0" styleClass="PlaylistButton" stylesheets="@style.css" text="Remove" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="12.0" radius="5.5" width="12.0" />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
